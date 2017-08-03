@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952001F32CFBD00D91609 /* AppDelegate.swift */; };
-		C01952031F32CFBD00D91609 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952021F32CFBD00D91609 /* ViewController.swift */; };
-		C01952061F32CFBD00D91609 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01952041F32CFBD00D91609 /* Main.storyboard */; };
 		C01952081F32CFBD00D91609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01952071F32CFBD00D91609 /* Assets.xcassets */; };
-		C019520B1F32CFBD00D91609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01952091F32CFBD00D91609 /* LaunchScreen.storyboard */; };
 		C01952161F32CFBD00D91609 /* __3_______Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952151F32CFBD00D91609 /* __3_______Tests.swift */; };
 		C01952211F32CFBD00D91609 /* __3_______UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952201F32CFBD00D91609 /* __3_______UITests.swift */; };
+		C01952391F32D73800D91609 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952381F32D73800D91609 /* WBNavigationController.swift */; };
+		C019523B1F32F37300D91609 /* WBMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019523A1F32F37300D91609 /* WBMainController.swift */; };
+		C019523D1F32F3A000D91609 /* WBBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019523C1F32F3A000D91609 /* WBBaseController.swift */; };
+		C019523F1F32F40000D91609 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019523E1F32F40000D91609 /* WBHomeViewController.swift */; };
+		C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952401F32F41C00D91609 /* WBMessageViewController.swift */; };
+		C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */; };
+		C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952441F32F43500D91609 /* WBProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +40,7 @@
 /* Begin PBXFileReference section */
 		C01951FD1F32CFBD00D91609 /* 8-3-模仿新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-3-模仿新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01952001F32CFBD00D91609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C01952021F32CFBD00D91609 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C01952051F32CFBD00D91609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C01952071F32CFBD00D91609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C019520A1F32CFBD00D91609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C019520C1F32CFBD00D91609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01952111F32CFBD00D91609 /* 8-3-模仿新浪微博Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "8-3-模仿新浪微博Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01952151F32CFBD00D91609 /* __3_______Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "__3_______Tests.swift"; sourceTree = "<group>"; };
@@ -47,6 +48,13 @@
 		C019521C1F32CFBD00D91609 /* 8-3-模仿新浪微博UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "8-3-模仿新浪微博UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01952201F32CFBD00D91609 /* __3_______UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "__3_______UITests.swift"; sourceTree = "<group>"; };
 		C01952221F32CFBD00D91609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01952381F32D73800D91609 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
+		C019523A1F32F37300D91609 /* WBMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainController.swift; sourceTree = "<group>"; };
+		C019523C1F32F3A000D91609 /* WBBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseController.swift; sourceTree = "<group>"; };
+		C019523E1F32F40000D91609 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		C01952401F32F41C00D91609 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		C01952441F32F43500D91609 /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				C01952001F32CFBD00D91609 /* AppDelegate.swift */,
-				C01952021F32CFBD00D91609 /* ViewController.swift */,
-				C01952041F32CFBD00D91609 /* Main.storyboard */,
+				C019522E1F32D67C00D91609 /* Classes */,
 				C01952071F32CFBD00D91609 /* Assets.xcassets */,
-				C01952091F32CFBD00D91609 /* LaunchScreen.storyboard */,
 				C019520C1F32CFBD00D91609 /* Info.plist */,
 			);
 			path = "8-3-模仿新浪微博";
@@ -123,6 +129,92 @@
 				C01952221F32CFBD00D91609 /* Info.plist */,
 			);
 			path = "8-3-模仿新浪微博UITests";
+			sourceTree = "<group>";
+		};
+		C019522E1F32D67C00D91609 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C01952311F32D67C00D91609 /* View(视图和控制器) */,
+				C019522F1F32D67C00D91609 /* Model(模型) */,
+				C01952301F32D67C00D91609 /* Tools(工具) */,
+				C01952371F32D67C00D91609 /* ViewModel(视图模型) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C019522F1F32D67C00D91609 /* Model(模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model(模型)";
+			sourceTree = "<group>";
+		};
+		C01952301F32D67C00D91609 /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tools(工具)";
+			sourceTree = "<group>";
+		};
+		C01952311F32D67C00D91609 /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				C01952341F32D67C00D91609 /* Main */,
+				C01952331F32D67C00D91609 /* Home */,
+				C01952351F32D67C00D91609 /* Message */,
+				C01952321F32D67C00D91609 /* Discover */,
+				C01952361F32D67C00D91609 /* Profile */,
+			);
+			path = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		C01952321F32D67C00D91609 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		C01952331F32D67C00D91609 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C019523E1F32F40000D91609 /* WBHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C01952341F32D67C00D91609 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C019523A1F32F37300D91609 /* WBMainController.swift */,
+				C01952381F32D73800D91609 /* WBNavigationController.swift */,
+				C019523C1F32F3A000D91609 /* WBBaseController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C01952351F32D67C00D91609 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				C01952401F32F41C00D91609 /* WBMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		C01952361F32D67C00D91609 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C01952441F32F43500D91609 /* WBProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C01952371F32D67C00D91609 /* ViewModel(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +279,7 @@
 		C01951F51F32CFBD00D91609 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WB;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Zeus;
@@ -232,9 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C019520B1F32CFBD00D91609 /* LaunchScreen.storyboard in Resources */,
 				C01952081F32CFBD00D91609 /* Assets.xcassets in Resources */,
-				C01952061F32CFBD00D91609 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +350,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C01952031F32CFBD00D91609 /* ViewController.swift in Sources */,
+				C019523B1F32F37300D91609 /* WBMainController.swift in Sources */,
+				C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */,
+				C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */,
+				C019523D1F32F3A000D91609 /* WBBaseController.swift in Sources */,
+				C019523F1F32F40000D91609 /* WBHomeViewController.swift in Sources */,
+				C01952391F32D73800D91609 /* WBNavigationController.swift in Sources */,
 				C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */,
+				C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +391,6 @@
 			targetProxy = C019521D1F32CFBD00D91609 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C01952041F32CFBD00D91609 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C01952051F32CFBD00D91609 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C01952091F32CFBD00D91609 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C019520A1F32CFBD00D91609 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C01952231F32CFBD00D91609 /* Debug */ = {
@@ -413,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "8-3-模仿新浪微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.Zeus.--3-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "8-3-模仿新浪微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.Zeus.--3-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
