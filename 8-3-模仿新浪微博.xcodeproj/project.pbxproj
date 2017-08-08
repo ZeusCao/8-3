@@ -18,6 +18,13 @@
 		C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952401F32F41C00D91609 /* WBMessageViewController.swift */; };
 		C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */; };
 		C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952441F32F43500D91609 /* WBProfileViewController.swift */; };
+		C01952521F32FA2700D91609 /* CLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C01952481F32FA2700D91609 /* CLNotificationCenter.m */; };
+		C01952541F32FA2700D91609 /* DateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C019524C1F32FA2700D91609 /* DateManager.m */; };
+		C01952551F32FA2700D91609 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C019524D1F32FA2700D91609 /* Foundation+Log.m */; };
+		C01952561F32FA2700D91609 /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C019524F1F32FA2700D91609 /* MyScrollView.m */; };
+		C01952571F32FA2700D91609 /* WMShuffleFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C01952511F32FA2700D91609 /* WMShuffleFigure.m */; };
+		C019525D1F33077500D91609 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019525C1F33077500D91609 /* Bundle+Extensions.swift */; };
+		C019525F1F33171B00D91609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C019525E1F33171B00D91609 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C01951FD1F32CFBD00D91609 /* 8-3-模仿新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-3-模仿新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01951FD1F32CFBD00D91609 /* 模仿新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模仿新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01952001F32CFBD00D91609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C01952071F32CFBD00D91609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C019520C1F32CFBD00D91609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +62,18 @@
 		C01952401F32F41C00D91609 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		C01952441F32F43500D91609 /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		C01952461F32F8D400D91609 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
+		C01952471F32FA2700D91609 /* CLNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNotificationCenter.h; sourceTree = "<group>"; };
+		C01952481F32FA2700D91609 /* CLNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNotificationCenter.m; sourceTree = "<group>"; };
+		C019524B1F32FA2700D91609 /* DateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateManager.h; sourceTree = "<group>"; };
+		C019524C1F32FA2700D91609 /* DateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateManager.m; sourceTree = "<group>"; };
+		C019524D1F32FA2700D91609 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		C019524E1F32FA2700D91609 /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
+		C019524F1F32FA2700D91609 /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
+		C01952501F32FA2700D91609 /* WMShuffleFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMShuffleFigure.h; sourceTree = "<group>"; };
+		C01952511F32FA2700D91609 /* WMShuffleFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMShuffleFigure.m; sourceTree = "<group>"; };
+		C019525C1F33077500D91609 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		C019525E1F33171B00D91609 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +114,7 @@
 		C01951FE1F32CFBD00D91609 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C01951FD1F32CFBD00D91609 /* 8-3-模仿新浪微博.app */,
+				C01951FD1F32CFBD00D91609 /* 模仿新浪微博.app */,
 				C01952111F32CFBD00D91609 /* 8-3-模仿新浪微博Tests.xctest */,
 				C019521C1F32CFBD00D91609 /* 8-3-模仿新浪微博UITests.xctest */,
 			);
@@ -106,8 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				C01952001F32CFBD00D91609 /* AppDelegate.swift */,
+				C01952461F32F8D400D91609 /* Weibo-Bridge.h */,
 				C019522E1F32D67C00D91609 /* Classes */,
 				C01952071F32CFBD00D91609 /* Assets.xcassets */,
+				C019525E1F33171B00D91609 /* LaunchScreen.storyboard */,
 				C019520C1F32CFBD00D91609 /* Info.plist */,
 			);
 			path = "8-3-模仿新浪微博";
@@ -152,6 +173,16 @@
 		C01952301F32D67C00D91609 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				C01952471F32FA2700D91609 /* CLNotificationCenter.h */,
+				C01952481F32FA2700D91609 /* CLNotificationCenter.m */,
+				C019524B1F32FA2700D91609 /* DateManager.h */,
+				C019524C1F32FA2700D91609 /* DateManager.m */,
+				C019524D1F32FA2700D91609 /* Foundation+Log.m */,
+				C019524E1F32FA2700D91609 /* MyScrollView.h */,
+				C019524F1F32FA2700D91609 /* MyScrollView.m */,
+				C01952501F32FA2700D91609 /* WMShuffleFigure.h */,
+				C01952511F32FA2700D91609 /* WMShuffleFigure.m */,
+				C019525B1F33076D00D91609 /* Extensions */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -217,6 +248,14 @@
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
 		};
+		C019525B1F33076D00D91609 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C019525C1F33077500D91609 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,7 +273,7 @@
 			);
 			name = "8-3-模仿新浪微博";
 			productName = "8-3-模仿新浪微博";
-			productReference = C01951FD1F32CFBD00D91609 /* 8-3-模仿新浪微博.app */;
+			productReference = C01951FD1F32CFBD00D91609 /* 模仿新浪微博.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C01952101F32CFBD00D91609 /* 8-3-模仿新浪微博Tests */ = {
@@ -326,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01952081F32CFBD00D91609 /* Assets.xcassets in Resources */,
+				C019525F1F33171B00D91609 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,11 +393,17 @@
 				C019523B1F32F37300D91609 /* WBMainController.swift in Sources */,
 				C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */,
 				C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */,
+				C01952521F32FA2700D91609 /* CLNotificationCenter.m in Sources */,
+				C01952541F32FA2700D91609 /* DateManager.m in Sources */,
 				C019523D1F32F3A000D91609 /* WBBaseController.swift in Sources */,
+				C01952571F32FA2700D91609 /* WMShuffleFigure.m in Sources */,
 				C019523F1F32F40000D91609 /* WBHomeViewController.swift in Sources */,
 				C01952391F32D73800D91609 /* WBNavigationController.swift in Sources */,
 				C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */,
 				C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */,
+				C01952551F32FA2700D91609 /* Foundation+Log.m in Sources */,
+				C01952561F32FA2700D91609 /* MyScrollView.m in Sources */,
+				C019525D1F33077500D91609 /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +483,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "模仿新浪微博";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -480,6 +527,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "模仿新浪微博";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -490,11 +538,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "8-3-模仿新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.Zeus.--3-------";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "模仿新浪微博";
+				SWIFT_OBJC_BRIDGING_HEADER = "8-3-模仿新浪微博/Weibo-Bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -503,11 +553,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "8-3-模仿新浪微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.Zeus.--3-------";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "模仿新浪微博";
+				SWIFT_OBJC_BRIDGING_HEADER = "8-3-模仿新浪微博/Weibo-Bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

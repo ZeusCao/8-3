@@ -14,6 +14,7 @@ class WBHomeViewController: WBBaseController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.8468805552, blue: 0.5303781629, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {
