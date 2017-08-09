@@ -18,13 +18,13 @@
 		C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952401F32F41C00D91609 /* WBMessageViewController.swift */; };
 		C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */; };
 		C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952441F32F43500D91609 /* WBProfileViewController.swift */; };
-		C01952521F32FA2700D91609 /* CLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C01952481F32FA2700D91609 /* CLNotificationCenter.m */; };
 		C01952541F32FA2700D91609 /* DateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C019524C1F32FA2700D91609 /* DateManager.m */; };
-		C01952551F32FA2700D91609 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C019524D1F32FA2700D91609 /* Foundation+Log.m */; };
-		C01952561F32FA2700D91609 /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C019524F1F32FA2700D91609 /* MyScrollView.m */; };
-		C01952571F32FA2700D91609 /* WMShuffleFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C01952511F32FA2700D91609 /* WMShuffleFigure.m */; };
 		C019525D1F33077500D91609 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019525C1F33077500D91609 /* Bundle+Extensions.swift */; };
 		C019525F1F33171B00D91609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C019525E1F33171B00D91609 /* LaunchScreen.storyboard */; };
+		C02DC25C1F39BAC40074973C /* ClazUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02DC2581F39BAC40074973C /* ClazUtil.swift */; };
+		C02DC25D1F39BAC40074973C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02DC2591F39BAC40074973C /* Common.swift */; };
+		C02DC25F1F39BAC40074973C /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02DC25B1F39BAC40074973C /* UIExtension.swift */; };
+		C04B8DFC1F3AEE5F00D6F828 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B8DFB1F3AEE5F00D6F828 /* WBDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,17 +63,14 @@
 		C01952421F32F42A00D91609 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		C01952441F32F43500D91609 /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		C01952461F32F8D400D91609 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
-		C01952471F32FA2700D91609 /* CLNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNotificationCenter.h; sourceTree = "<group>"; };
-		C01952481F32FA2700D91609 /* CLNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNotificationCenter.m; sourceTree = "<group>"; };
 		C019524B1F32FA2700D91609 /* DateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateManager.h; sourceTree = "<group>"; };
 		C019524C1F32FA2700D91609 /* DateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateManager.m; sourceTree = "<group>"; };
-		C019524D1F32FA2700D91609 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
-		C019524E1F32FA2700D91609 /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
-		C019524F1F32FA2700D91609 /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
-		C01952501F32FA2700D91609 /* WMShuffleFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMShuffleFigure.h; sourceTree = "<group>"; };
-		C01952511F32FA2700D91609 /* WMShuffleFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMShuffleFigure.m; sourceTree = "<group>"; };
 		C019525C1F33077500D91609 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		C019525E1F33171B00D91609 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C02DC2581F39BAC40074973C /* ClazUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClazUtil.swift; sourceTree = "<group>"; };
+		C02DC2591F39BAC40074973C /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C02DC25B1F39BAC40074973C /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		C04B8DFB1F3AEE5F00D6F828 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,15 +170,11 @@
 		C01952301F32D67C00D91609 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
-				C01952471F32FA2700D91609 /* CLNotificationCenter.h */,
-				C01952481F32FA2700D91609 /* CLNotificationCenter.m */,
+				C02DC2581F39BAC40074973C /* ClazUtil.swift */,
+				C02DC2591F39BAC40074973C /* Common.swift */,
+				C02DC25B1F39BAC40074973C /* UIExtension.swift */,
 				C019524B1F32FA2700D91609 /* DateManager.h */,
 				C019524C1F32FA2700D91609 /* DateManager.m */,
-				C019524D1F32FA2700D91609 /* Foundation+Log.m */,
-				C019524E1F32FA2700D91609 /* MyScrollView.h */,
-				C019524F1F32FA2700D91609 /* MyScrollView.m */,
-				C01952501F32FA2700D91609 /* WMShuffleFigure.h */,
-				C01952511F32FA2700D91609 /* WMShuffleFigure.m */,
 				C019525B1F33076D00D91609 /* Extensions */,
 			);
 			path = "Tools(工具)";
@@ -190,6 +183,7 @@
 		C01952311F32D67C00D91609 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				C04B8DF51F3AEDE900D6F828 /* 测试 */,
 				C01952341F32D67C00D91609 /* Main */,
 				C01952331F32D67C00D91609 /* Home */,
 				C01952351F32D67C00D91609 /* Message */,
@@ -254,6 +248,14 @@
 				C019525C1F33077500D91609 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C04B8DF51F3AEDE900D6F828 /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				C04B8DFB1F3AEE5F00D6F828 /* WBDemoViewController.swift */,
+			);
+			path = "测试";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,16 +395,16 @@
 				C019523B1F32F37300D91609 /* WBMainController.swift in Sources */,
 				C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */,
 				C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */,
-				C01952521F32FA2700D91609 /* CLNotificationCenter.m in Sources */,
+				C02DC25F1F39BAC40074973C /* UIExtension.swift in Sources */,
 				C01952541F32FA2700D91609 /* DateManager.m in Sources */,
+				C02DC25D1F39BAC40074973C /* Common.swift in Sources */,
+				C02DC25C1F39BAC40074973C /* ClazUtil.swift in Sources */,
 				C019523D1F32F3A000D91609 /* WBBaseController.swift in Sources */,
-				C01952571F32FA2700D91609 /* WMShuffleFigure.m in Sources */,
 				C019523F1F32F40000D91609 /* WBHomeViewController.swift in Sources */,
 				C01952391F32D73800D91609 /* WBNavigationController.swift in Sources */,
 				C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */,
 				C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */,
-				C01952551F32FA2700D91609 /* Foundation+Log.m in Sources */,
-				C01952561F32FA2700D91609 /* MyScrollView.m in Sources */,
+				C04B8DFC1F3AEE5F00D6F828 /* WBDemoViewController.swift in Sources */,
 				C019525D1F33077500D91609 /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +639,7 @@
 				C01952271F32CFBD00D91609 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C01952281F32CFBD00D91609 /* Build configuration list for PBXNativeTarget "8-3-模仿新浪微博Tests" */ = {
 			isa = XCConfigurationList;
@@ -645,6 +648,7 @@
 				C019522A1F32CFBD00D91609 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C019522B1F32CFBD00D91609 /* Build configuration list for PBXNativeTarget "8-3-模仿新浪微博UITests" */ = {
 			isa = XCConfigurationList;
@@ -653,6 +657,7 @@
 				C019522D1F32CFBD00D91609 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

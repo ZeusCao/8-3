@@ -17,20 +17,28 @@ class WBHomeViewController: WBBaseController {
         view.backgroundColor = #colorLiteral(red: 1, green: 0.8468805552, blue: 0.5303781629, alpha: 1)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc fileprivate func showFriends(){
+        print(#function)
+        
+        let vc = WBDemoViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+}
+
+extension WBHomeViewController{
+    
+    // 重写父类的方法
+    override func setupUI() {
+        super.setupUI()
+        // 设置导航栏
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
+    
+    //fileprivate
 }

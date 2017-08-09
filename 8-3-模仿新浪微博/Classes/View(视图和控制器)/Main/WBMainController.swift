@@ -14,6 +14,18 @@ class WBMainController: UITabBarController {
         super.viewDidLoad()
 
         setupChildControllers()
+        setupComposeButton()
+    }
+    
+    
+    // 添加按钮
+    lazy var composeButton: UIButton = UIButton()
+    
+    // MARK --- 按钮的监听方法 ---
+      // private 能够保证方法私有，仅在当前对象被访问
+      // @objc 允许这个函数在运行时通过OC的消息机制被调用
+      func composeStatus() {
+        print("撰写微博")
     }
 
 }
@@ -26,6 +38,20 @@ class WBMainController: UITabBarController {
 
 // MARK------- 设置界面
 extension WBMainController {
+    // 设置添加按钮
+    func setupComposeButton() {
+        composeButton.setImage(UIImage(named: "buttonAdd"), for: UIControlState(rawValue: 0))
+        // 计算宽度
+        let count = CGFloat(childViewControllers.count)
+        let w = tabBar.bounds.width / count - 1// 为了防止点到容错点
+        composeButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        // oc中CGRectInset 正数向内缩进，负数向外扩散
+        composeButton.frame = tabBar.bounds.insetBy(dx: 2*w, dy: 0) //（因为w－1 能够让其宽度变大，覆盖掉容错点）
+       tabBar.addSubview(composeButton)
+        
+        // 添加撰写按钮的的点击方法
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+    }
     
     // 设置所有自控制器
      func  setupChildControllers() {
@@ -33,6 +59,7 @@ extension WBMainController {
         let array = [
             ["clsName" : "WBHomeViewController", "title" : "首页", "imageName" : "113"],
             ["clsName" : "WBMessageViewController", "title" : "消息", "imageName" : "113"],
+            ["clsName" : ""],
             ["clsName" : "WBDiscoverViewController", "title" : "发现", "imageName" : "113"],
             ["clsName" : "WBProfileViewController", "title" : "我", "imageName" : "113"]
         ]
@@ -73,6 +100,12 @@ extension WBMainController {
         vc.tabBarItem.image = UIImage(named: imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "103")?.withRenderingMode(.alwaysOriginal)
         
+        // 设置tabbar的标题字体
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .highlighted)
+        // 大小
+        vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 14)] , for:UIControlState(rawValue: 0))
+        
+        // 实例化导航控制器的时候，会调用push方法将rootVC压栈
         let nav = WBNavigationController(rootViewController: vc)
         return nav
         
