@@ -25,6 +25,7 @@
 		C02DC25D1F39BAC40074973C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02DC2591F39BAC40074973C /* Common.swift */; };
 		C02DC25F1F39BAC40074973C /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02DC25B1F39BAC40074973C /* UIExtension.swift */; };
 		C04B8DFC1F3AEE5F00D6F828 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B8DFB1F3AEE5F00D6F828 /* WBDemoViewController.swift */; };
+		C05185CC1F44479D00A59120 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05185CB1F44479D00A59120 /* WBVisitorView.swift */; };
 		C06CD9491F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CD9481F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift */; };
 		C06CD94C1F3C584100B27D2C /* UIColor+HexToRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C06CD94B1F3C584100B27D2C /* UIColor+HexToRGB.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		C02DC2591F39BAC40074973C /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C02DC25B1F39BAC40074973C /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		C04B8DFB1F3AEE5F00D6F828 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		C05185CB1F44479D00A59120 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		C06CD9481F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		C06CD94A1F3C584100B27D2C /* UIColor+HexToRGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexToRGB.h"; sourceTree = "<group>"; };
 		C06CD94B1F3C584100B27D2C /* UIColor+HexToRGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexToRGB.m"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				C019523A1F32F37300D91609 /* WBMainController.swift */,
 				C01952381F32D73800D91609 /* WBNavigationController.swift */,
 				C019523C1F32F3A000D91609 /* WBBaseController.swift */,
+				C05185CA1F44473B00A59120 /* VisitorView */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -264,6 +267,14 @@
 				C04B8DFB1F3AEE5F00D6F828 /* WBDemoViewController.swift */,
 			);
 			path = "测试";
+			sourceTree = "<group>";
+		};
+		C05185CA1F44473B00A59120 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				C05185CB1F44479D00A59120 /* WBVisitorView.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +421,7 @@
 				C06CD9491F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift in Sources */,
 				C06CD94C1F3C584100B27D2C /* UIColor+HexToRGB.m in Sources */,
 				C019523D1F32F3A000D91609 /* WBBaseController.swift in Sources */,
+				C05185CC1F44479D00A59120 /* WBVisitorView.swift in Sources */,
 				C019523F1F32F40000D91609 /* WBHomeViewController.swift in Sources */,
 				C01952391F32D73800D91609 /* WBNavigationController.swift in Sources */,
 				C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */,

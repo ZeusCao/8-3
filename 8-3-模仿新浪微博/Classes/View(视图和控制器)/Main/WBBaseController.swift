@@ -14,8 +14,16 @@ import UIKit
 // 所有主控制器的基类控制器
 class WBBaseController: UIViewController{
     
+    // 用户登录状态
+    var userLogon = true
+    
     // 表格视图- 如果没有用户登录，就不创建
     var tableView: UITableView?
+    // 刷新控件
+    var refreshControl: UIRefreshControl?
+    
+    // 作为上拉加载更多的标记
+    var isPullup = false
     
     // 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64))
@@ -38,7 +46,8 @@ class WBBaseController: UIViewController{
     
     // 加载数据 -- 具体的方法由子类负责
     func loadData() {
-        
+        // 如果子类不实现该方法，则默认关闭刷新控件
+        refreshControl?.endRefreshing()
     }
     
 }
@@ -49,10 +58,13 @@ class WBBaseController: UIViewController{
 extension WBBaseController {
     
     func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.backgroundColor = UIColor.white
+        
+        // 取消自动缩进(如果隐藏了导航栏会缩进20个点)
+        automaticallyAdjustsScrollViewInsets = false
 
        setupNavigationBar()
-       setupTableView()
+        userLogon ? setupTableView() : setupVisitorView()
     }
     
     // 设置导航条
@@ -79,9 +91,28 @@ extension WBBaseController {
         tableView?.delegate = self
         tableView?.dataSource = self
         
+        // 设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 0, right: 0)
+        
+        
+        // 设置刷新控件 
+        // 1 实例化刷新控件
+        refreshControl = UIRefreshControl()
+        // 2 添加到表格视图
+        tableView?.addSubview(refreshControl!)
+        // 3 添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+    }
+    
+    // 设置访客视图，用户没有登录时呈现
+    fileprivate func setupVisitorView() {
+        let visitorView = WBVisitorView(frame: view.bounds)
+        view.insertSubview(visitorView, belowSubview: navigationBar)
     }
     
 }
+
 
 // MARK --- 代理方法
 extension WBBaseController:UITableViewDelegate,UITableViewDataSource {
@@ -95,6 +126,32 @@ extension WBBaseController:UITableViewDelegate,UITableViewDataSource {
         
         // 只是保证没有语法错误
         return UITableViewCell()
+    }
+    
+    // 将要显示cell
+    // 在现实最后一行的时候做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // <1> 判断indexpath是否是最后一行
+          // 1 取出row
+          let row = indexPath.row
+          // 2 取出section
+          let section = tableView.numberOfSections - 1
+        
+          if row < 0 || section < 0 {
+             return
+          }
+        
+          // 行数
+          let count = tableView.numberOfRows(inSection: section)
+          // 如果是最后一行同时没有开始上拉加载更多
+          if row == count - 1 && isPullup == false {
+             print("上拉刷新")
+            isPullup = true
+            
+            // 开始刷新
+            loadData()
+            
+          }
     }
     
 }
