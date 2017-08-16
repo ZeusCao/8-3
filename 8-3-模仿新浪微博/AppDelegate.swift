@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    
+//    // 支持横竖屏
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        return .portrait
+//    }
 }
 

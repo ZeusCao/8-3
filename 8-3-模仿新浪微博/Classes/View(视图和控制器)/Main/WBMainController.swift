@@ -17,6 +17,16 @@ class WBMainController: UITabBarController {
         setupComposeButton()
     }
     
+    /*
+     - viewController中实现的方法
+     - 使用代码控制设备的方向，可以在需要横屏的时候单独处理
+     - 设置支持的方向之后，当前的控制器及子控制器都会遵守这个方向
+     **/
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask
+    {
+        return .portrait
+    }
+   
     
     // 添加按钮
     lazy var composeButton: UIButton = UIButton()
@@ -39,7 +49,7 @@ class WBMainController: UITabBarController {
 // MARK------- 设置界面
 extension WBMainController {
     // 设置添加按钮
-    func setupComposeButton() {
+   fileprivate func setupComposeButton() {
         composeButton.setImage(UIImage(named: "buttonAdd"), for: UIControlState(rawValue: 0))
         // 计算宽度
         let count = CGFloat(childViewControllers.count)
