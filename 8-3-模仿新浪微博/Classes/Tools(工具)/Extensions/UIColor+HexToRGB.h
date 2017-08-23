@@ -15,7 +15,7 @@
  *UIColor之16进制数颜色值转换 RGB颜色值
  *比如：#FF6703、0XFF9900 等颜色字符串：
  */
-+ (UIColor *)colorWithHexString:(NSString *)hexString;
++ (instancetype)colorWithHexString:(NSString *)hexString;
 
 
 

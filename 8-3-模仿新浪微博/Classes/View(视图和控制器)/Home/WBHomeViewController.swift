@@ -19,8 +19,7 @@ class WBHomeViewController: WBBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.8468805552, blue: 0.5303781629, alpha: 1)
+        
     }
     
     // 加载数据
@@ -67,25 +66,20 @@ class WBHomeViewController: WBBaseController {
 extension WBHomeViewController{
     
     // 重写父类的方法
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+        super.setupTableView()
         // 设置导航栏
         // 无法高亮
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
+        // navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
         
-//        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
-//        btn.setTitle("好友", for: UIControlState(rawValue: 0))
-//        btn.setTitleColor(UIColor.darkGray, for: UIControlState(rawValue: 0))
-//        btn.setTitleColor(UIColor.orange, for: UIControlState(rawValue: 1))
-//        btn.addTarget(self, action: #selector(showFriends), for: .touchUpInside)
-//        //navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
-//        navItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", fontSize: 16, target: self, action:#selector(showFriends), isBackBtn: false)
         
         // 注册原型cell
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
+
     }
+    
+   
 }
 
 // MARK --- 表格数据源方法 ---

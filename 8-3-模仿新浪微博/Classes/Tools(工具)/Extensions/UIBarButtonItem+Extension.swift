@@ -15,11 +15,12 @@ extension UIBarButtonItem {
         //let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 30))
         let btn = UIButton()
         
-        btn.setTitle(title, for: UIControlState(rawValue: 0))
+        btn.setTitle(title, for: UIControlState.normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(UIColor.darkGray, for: UIControlState(rawValue: 0))
-        btn.setTitleColor(UIColor.orange, for: UIControlState(rawValue: 1))
+        btn.setTitleColor(UIColor.darkGray, for: UIControlState.normal)
+        btn.setTitleColor(UIColor.orange, for: UIControlState.highlighted)
         btn.addTarget(target, action: action, for: .touchUpInside)
+        btn.sizeToFit()
         
         if isBackBtn {
             btn.setImage(UIImage(named: "nav返回"), for: .normal)

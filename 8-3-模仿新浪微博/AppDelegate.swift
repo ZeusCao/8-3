@@ -22,12 +22,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = WBMainController()
         window?.makeKeyAndVisible()
         
+        loadAppInfo()
+        
         return true
     }
 
-//    // 支持横竖屏
-//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//        return .portrait
-//    }
+
 }
+
+
+// MARK --- 从服务器加载应用程序信息 ---
+extension AppDelegate {
+    fileprivate func loadAppInfo() {
+        // 1 模拟异步
+        DispatchQueue.global().async {
+            // >1 url
+            let url = Bundle.main.url(forResource: "demo.json", withExtension: nil)
+            // >2 data
+            let data = NSData(contentsOf: url!)
+            // >3 写入磁盘
+            let docDic = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+            let jsonPath = (docDic as! NSString).appendingPathComponent("main.json")
+            data?.write(toFile: jsonPath, atomically: true)
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

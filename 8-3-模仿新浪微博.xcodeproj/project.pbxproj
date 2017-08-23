@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00F6F8A1F46BAC900F94EED /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = C00F6F891F46BAC900F94EED /* demo.json */; };
 		C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952001F32CFBD00D91609 /* AppDelegate.swift */; };
 		C01952081F32CFBD00D91609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01952071F32CFBD00D91609 /* Assets.xcassets */; };
 		C01952161F32CFBD00D91609 /* __3_______Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01952151F32CFBD00D91609 /* __3_______Tests.swift */; };
@@ -28,6 +29,18 @@
 		C05185CC1F44479D00A59120 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05185CB1F44479D00A59120 /* WBVisitorView.swift */; };
 		C06CD9491F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CD9481F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift */; };
 		C06CD94C1F3C584100B27D2C /* UIColor+HexToRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C06CD94B1F3C584100B27D2C /* UIColor+HexToRGB.m */; };
+		C0D89A791F45835C0022D173 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A621F45835C0022D173 /* NSArray+Log.m */; };
+		C0D89A7A1F45835C0022D173 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A641F45835C0022D173 /* NSAttributedString+CZAdditon.m */; };
+		C0D89A7B1F45835C0022D173 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A661F45835C0022D173 /* NSObject+CZRuntime.m */; };
+		C0D89A7C1F45835C0022D173 /* NSString+CZBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A681F45835C0022D173 /* NSString+CZBase64.m */; };
+		C0D89A7D1F45835C0022D173 /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A6A1F45835C0022D173 /* NSString+CZHash.m */; };
+		C0D89A7E1F45835C0022D173 /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A6C1F45835C0022D173 /* NSString+CZPath.m */; };
+		C0D89A7F1F45835C0022D173 /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A6E1F45835C0022D173 /* UIButton+CZAddition.m */; };
+		C0D89A801F45835C0022D173 /* UIColor+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A701F45835C0022D173 /* UIColor+CZAddition.m */; };
+		C0D89A811F45835C0022D173 /* UILabel+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A721F45835C0022D173 /* UILabel+CZAddition.m */; };
+		C0D89A821F45835C0022D173 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A741F45835C0022D173 /* UIScreen+CZAddition.m */; };
+		C0D89A831F45835C0022D173 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A761F45835C0022D173 /* UIView+CZAddition.m */; };
+		C0D89A841F45835C0022D173 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89A781F45835C0022D173 /* UIViewController+CZAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C00F6F891F46BAC900F94EED /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		C01951FD1F32CFBD00D91609 /* 模仿新浪微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模仿新浪微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01952001F32CFBD00D91609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C01952071F32CFBD00D91609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +92,31 @@
 		C06CD9481F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		C06CD94A1F3C584100B27D2C /* UIColor+HexToRGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexToRGB.h"; sourceTree = "<group>"; };
 		C06CD94B1F3C584100B27D2C /* UIColor+HexToRGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexToRGB.m"; sourceTree = "<group>"; };
+		C0D89A601F45835C0022D173 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
+		C0D89A611F45835C0022D173 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		C0D89A621F45835C0022D173 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		C0D89A631F45835C0022D173 /* NSAttributedString+CZAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CZAdditon.h"; sourceTree = "<group>"; };
+		C0D89A641F45835C0022D173 /* NSAttributedString+CZAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CZAdditon.m"; sourceTree = "<group>"; };
+		C0D89A651F45835C0022D173 /* NSObject+CZRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZRuntime.h"; sourceTree = "<group>"; };
+		C0D89A661F45835C0022D173 /* NSObject+CZRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZRuntime.m"; sourceTree = "<group>"; };
+		C0D89A671F45835C0022D173 /* NSString+CZBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZBase64.h"; sourceTree = "<group>"; };
+		C0D89A681F45835C0022D173 /* NSString+CZBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZBase64.m"; sourceTree = "<group>"; };
+		C0D89A691F45835C0022D173 /* NSString+CZHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZHash.h"; sourceTree = "<group>"; };
+		C0D89A6A1F45835C0022D173 /* NSString+CZHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZHash.m"; sourceTree = "<group>"; };
+		C0D89A6B1F45835C0022D173 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
+		C0D89A6C1F45835C0022D173 /* NSString+CZPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZPath.m"; sourceTree = "<group>"; };
+		C0D89A6D1F45835C0022D173 /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
+		C0D89A6E1F45835C0022D173 /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
+		C0D89A6F1F45835C0022D173 /* UIColor+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CZAddition.h"; sourceTree = "<group>"; };
+		C0D89A701F45835C0022D173 /* UIColor+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CZAddition.m"; sourceTree = "<group>"; };
+		C0D89A711F45835C0022D173 /* UILabel+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CZAddition.h"; sourceTree = "<group>"; };
+		C0D89A721F45835C0022D173 /* UILabel+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CZAddition.m"; sourceTree = "<group>"; };
+		C0D89A731F45835C0022D173 /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
+		C0D89A741F45835C0022D173 /* UIScreen+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CZAddition.m"; sourceTree = "<group>"; };
+		C0D89A751F45835C0022D173 /* UIView+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZAddition.h"; sourceTree = "<group>"; };
+		C0D89A761F45835C0022D173 /* UIView+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CZAddition.m"; sourceTree = "<group>"; };
+		C0D89A771F45835C0022D173 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
+		C0D89A781F45835C0022D173 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +222,7 @@
 				C019524B1F32FA2700D91609 /* DateManager.h */,
 				C019524C1F32FA2700D91609 /* DateManager.m */,
 				C019525B1F33076D00D91609 /* Extensions */,
+				C0D89A5F1F45835C0022D173 /* Additions */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -222,6 +262,7 @@
 				C019523A1F32F37300D91609 /* WBMainController.swift */,
 				C01952381F32D73800D91609 /* WBNavigationController.swift */,
 				C019523C1F32F3A000D91609 /* WBBaseController.swift */,
+				C00F6F891F46BAC900F94EED /* demo.json */,
 				C05185CA1F44473B00A59120 /* VisitorView */,
 			);
 			path = Main;
@@ -275,6 +316,38 @@
 				C05185CB1F44479D00A59120 /* WBVisitorView.swift */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		C0D89A5F1F45835C0022D173 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				C0D89A601F45835C0022D173 /* CZAdditions.h */,
+				C0D89A611F45835C0022D173 /* NSArray+Log.h */,
+				C0D89A621F45835C0022D173 /* NSArray+Log.m */,
+				C0D89A631F45835C0022D173 /* NSAttributedString+CZAdditon.h */,
+				C0D89A641F45835C0022D173 /* NSAttributedString+CZAdditon.m */,
+				C0D89A651F45835C0022D173 /* NSObject+CZRuntime.h */,
+				C0D89A661F45835C0022D173 /* NSObject+CZRuntime.m */,
+				C0D89A671F45835C0022D173 /* NSString+CZBase64.h */,
+				C0D89A681F45835C0022D173 /* NSString+CZBase64.m */,
+				C0D89A691F45835C0022D173 /* NSString+CZHash.h */,
+				C0D89A6A1F45835C0022D173 /* NSString+CZHash.m */,
+				C0D89A6B1F45835C0022D173 /* NSString+CZPath.h */,
+				C0D89A6C1F45835C0022D173 /* NSString+CZPath.m */,
+				C0D89A6D1F45835C0022D173 /* UIButton+CZAddition.h */,
+				C0D89A6E1F45835C0022D173 /* UIButton+CZAddition.m */,
+				C0D89A6F1F45835C0022D173 /* UIColor+CZAddition.h */,
+				C0D89A701F45835C0022D173 /* UIColor+CZAddition.m */,
+				C0D89A711F45835C0022D173 /* UILabel+CZAddition.h */,
+				C0D89A721F45835C0022D173 /* UILabel+CZAddition.m */,
+				C0D89A731F45835C0022D173 /* UIScreen+CZAddition.h */,
+				C0D89A741F45835C0022D173 /* UIScreen+CZAddition.m */,
+				C0D89A751F45835C0022D173 /* UIView+CZAddition.h */,
+				C0D89A761F45835C0022D173 /* UIView+CZAddition.m */,
+				C0D89A771F45835C0022D173 /* UIViewController+CZAddition.h */,
+				C0D89A781F45835C0022D173 /* UIViewController+CZAddition.m */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01952081F32CFBD00D91609 /* Assets.xcassets in Resources */,
+				C00F6F8A1F46BAC900F94EED /* demo.json in Resources */,
 				C019525F1F33171B00D91609 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,23 +485,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D89A801F45835C0022D173 /* UIColor+CZAddition.m in Sources */,
 				C019523B1F32F37300D91609 /* WBMainController.swift in Sources */,
 				C01952451F32F43500D91609 /* WBProfileViewController.swift in Sources */,
 				C01952431F32F42A00D91609 /* WBDiscoverViewController.swift in Sources */,
+				C0D89A7C1F45835C0022D173 /* NSString+CZBase64.m in Sources */,
+				C0D89A7B1F45835C0022D173 /* NSObject+CZRuntime.m in Sources */,
 				C02DC25F1F39BAC40074973C /* UIExtension.swift in Sources */,
+				C0D89A7D1F45835C0022D173 /* NSString+CZHash.m in Sources */,
+				C0D89A7A1F45835C0022D173 /* NSAttributedString+CZAdditon.m in Sources */,
+				C0D89A7E1F45835C0022D173 /* NSString+CZPath.m in Sources */,
 				C01952541F32FA2700D91609 /* DateManager.m in Sources */,
 				C02DC25D1F39BAC40074973C /* Common.swift in Sources */,
 				C02DC25C1F39BAC40074973C /* ClazUtil.swift in Sources */,
 				C06CD9491F3C4FAC00B27D2C /* UIBarButtonItem+Extension.swift in Sources */,
 				C06CD94C1F3C584100B27D2C /* UIColor+HexToRGB.m in Sources */,
+				C0D89A841F45835C0022D173 /* UIViewController+CZAddition.m in Sources */,
+				C0D89A791F45835C0022D173 /* NSArray+Log.m in Sources */,
 				C019523D1F32F3A000D91609 /* WBBaseController.swift in Sources */,
+				C0D89A811F45835C0022D173 /* UILabel+CZAddition.m in Sources */,
 				C05185CC1F44479D00A59120 /* WBVisitorView.swift in Sources */,
+				C0D89A821F45835C0022D173 /* UIScreen+CZAddition.m in Sources */,
 				C019523F1F32F40000D91609 /* WBHomeViewController.swift in Sources */,
 				C01952391F32D73800D91609 /* WBNavigationController.swift in Sources */,
 				C01952011F32CFBD00D91609 /* AppDelegate.swift in Sources */,
 				C01952411F32F41C00D91609 /* WBMessageViewController.swift in Sources */,
 				C04B8DFC1F3AEE5F00D6F828 /* WBDemoViewController.swift in Sources */,
+				C0D89A7F1F45835C0022D173 /* UIButton+CZAddition.m in Sources */,
 				C019525D1F33077500D91609 /* Bundle+Extensions.swift in Sources */,
+				C0D89A831F45835C0022D173 /* UIView+CZAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

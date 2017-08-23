@@ -8,14 +8,17 @@
 
 import UIKit
 
-// 在swift中利用extension可以把函数按照功能分类管理，便于阅读和维护，注意： 1.extension中不能有属性， 2.extension中不能重写父类方法（重写子类方法是子类的职责，扩展是对类的扩展）
+// 在swift中利用extension可以把函数按照功能分类管理，便于阅读和维护，注意： 1.extension中不能有属性， 2.extension中不能重写父类本类的方法【不包括扩展方法】（重写子类方法是子类的职责，扩展是对类的扩展）
 
 
 // 所有主控制器的基类控制器
 class WBBaseController: UIViewController{
     
     // 用户登录状态
-    var userLogon = true
+    var userLogon = false
+    
+    // 访客视图信息字典
+    var visitorInfo: [String : String]?
     
     // 表格视图- 如果没有用户登录，就不创建
     var tableView: UITableView?
@@ -52,12 +55,25 @@ class WBBaseController: UIViewController{
     
 }
 
+// MARK--- 访客视图监听方法 ---
+extension WBBaseController {
+    @objc fileprivate func login() {
+        print("用户登录界面")
+    }
+    @objc fileprivate func register() {
+        print("用户注册界面")
+    }
+    
+}
+
+
+
 
 // MARR --- 设置界面
 // 隔离代码
 extension WBBaseController {
     
-    func setupUI() {
+   fileprivate  func setupUI() {
         view.backgroundColor = UIColor.white
         
         // 取消自动缩进(如果隐藏了导航栏会缩进20个点)
@@ -75,15 +91,19 @@ extension WBBaseController {
         // 将item设置给bar
         navigationBar.items = [navItem]
         
-        // 设置navBar的渲染颜色
+        // 设置navBar的整个背景渲染颜色
         navigationBar.barTintColor = UIColor.init(hexString: "0xf6f6f6")
         
         // 设置navBar的字体颜色
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        
+        // 设置上面系统按钮的颜色
+        navigationBar.tintColor = UIColor.orange
     }
     
-    // 设置表格视图
-    fileprivate func setupTableView() {
+    
+    // 设置表格视图 (子类重写此方法，因为子类不需要关心用户登陆之前的逻辑)
+     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
@@ -109,6 +129,19 @@ extension WBBaseController {
     fileprivate func setupVisitorView() {
         let visitorView = WBVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        // 设置访客视图信息
+        visitorView.visitorInfo = visitorInfo
+        
+        // 添加访客视图的监听方法
+        visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        // 设置导航条按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+            navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
+    
+    
     }
     
 }

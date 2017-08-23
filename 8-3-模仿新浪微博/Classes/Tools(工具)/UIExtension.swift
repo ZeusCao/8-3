@@ -66,6 +66,16 @@ extension UIButton{
         sizeToFit()
     }
     
+    convenience init(title: String, fontSize: CGFloat, normalColor: UIColor, highlightedColor: UIColor, backgroundImageName: String) {
+        self.init()
+        setTitle(title, for: UIControlState.normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitleColor(normalColor, for: UIControlState.normal)
+        setTitleColor(highlightedColor, for: UIControlState.highlighted)
+        setBackgroundImage(UIImage(named: backgroundImageName), for: UIControlState.normal)
+    }
+    
+    
     func setBackgroundImage(imageName: String, status: UIControlState){
         setBackgroundImage(UIImage(named: imageName), for: status)
     }
@@ -77,4 +87,9 @@ extension  UIImageView{
         self.init(image: UIImage(named: imageName))
     }
 }
+
+
+
+
+
 

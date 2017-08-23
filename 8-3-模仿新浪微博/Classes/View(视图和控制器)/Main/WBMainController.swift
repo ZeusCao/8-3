@@ -34,7 +34,7 @@ class WBMainController: UITabBarController {
     // MARK --- 按钮的监听方法 ---
       // private 能够保证方法私有，仅在当前对象被访问
       // @objc 允许这个函数在运行时通过OC的消息机制被调用
-      func composeStatus() {
+     @objc func composeStatus() {
         print("撰写微博")
     }
 
@@ -66,18 +66,33 @@ extension WBMainController {
     // 设置所有自控制器
      func  setupChildControllers() {
         
-        let array = [
-            ["clsName" : "WBHomeViewController", "title" : "首页", "imageName" : "113"],
-            ["clsName" : "WBMessageViewController", "title" : "消息", "imageName" : "113"],
+        // 现在很多的程序中界面的加载都依赖于网络的json
+        // 从bundle加载配置的json
+//        guard let path = Bundle.main.path(forResource: "demo.json", ofType: nil),
+//            let data = NSData(contentsOfFile: path),
+        // try？：弱try，如果解析成功就有值，否则为nil
+        // try！：强try，如果解析成功就有值，否则崩溃
+//            let array = try? JSONSerialization.jsonObject(with: data as Data , options: []) as? [String : AnyObject] else{
+//                return
+//        }
+        
+        
+        let array   =  [
+            ["clsName" : "WBHomeViewController" as AnyObject, "title" : "首页" as AnyObject, "imageName" : "113", "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看有什么惊喜"]],
+            ["clsName" : "WBMessageViewController", "title" : "消息", "imageName" : "113", "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登陆后，别人评论你的微博，发给你的消息都会在这里收到通知"]],
             ["clsName" : ""],
-            ["clsName" : "WBDiscoverViewController", "title" : "发现", "imageName" : "113"],
-            ["clsName" : "WBProfileViewController", "title" : "我", "imageName" : "113"]
+            ["clsName" : "WBDiscoverViewController", "title" : "发现", "imageName" : "113", "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登陆后，最新最热的微博尽在掌握，不再会与实事潮流擦肩而过"]],
+            ["clsName" : "WBProfileViewController", "title" : "我", "imageName" : "113" ,"visitorInfo": ["imageName": "visitordiscover_image_profile", "message": "登陆后，你的微博，相册，个人资料都会显示在这里，展示给被人砍"]]
         ]
+        
+        // 数组转化为json 序列化
+        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        (data as NSData).write(toFile: "/Users/Zeus/Desktop/demo.json", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
             
-            arrayM.append(controller(dict:dict))
+            arrayM.append(controller(dict:dict as [String : AnyObject]))
         }
         
         viewControllers = arrayM
@@ -87,13 +102,14 @@ extension WBMainController {
     // 使用字典创建一个自控制器
     /// --parameter dict: 信息字典[clsName ,title, imageName]
     /// --returns: 子控制器
-    private func controller(dict:[String : String]) -> UIViewController{
+    fileprivate func controller(dict:[String : AnyObject]) -> UIViewController{
         
         // 1. 获取字典内容
-        guard let clsName = dict["clsName"],
-            let title = dict["title"],
-            let imageName = dict["imageName"],
-            let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type
+        guard let clsName = dict["clsName"] as? String,
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
+            let visitorInfo = dict["visitorInfo"] as? [String : String],
+        let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? WBBaseController.Type
             //let cls = NSClassFromString(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""  + "." + clsName) as? UIViewController.Type
         //let cls  = NSClassFromString("模仿新浪微博.WBHomeViewController") as? UIViewController.Type
 
@@ -105,6 +121,9 @@ extension WBMainController {
     
         let vc = cls.init()
         vc.title = title
+        
+        // 设置控制器的访客信息字典
+        vc.visitorInfo = visitorInfo
         
         // 设置图像
         vc.tabBarItem.image = UIImage(named: imageName)

@@ -28,9 +28,9 @@ class WBDemoViewController: WBBaseController {
 
 extension WBDemoViewController{
     
-    override func setupUI() {
-
-        super.setupUI()
+    // 重写父类方法
+    override func setupTableView() {
+         super.setupTableView()
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
         btn.setTitle("下一个", for: UIControlState(rawValue: 0))
         btn.setTitleColor(UIColor.darkGray, for: UIControlState(rawValue: 0))
@@ -38,6 +38,8 @@ extension WBDemoViewController{
         btn.addTarget(self, action: #selector(showNext), for: .touchUpInside)
         navItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
         //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
+
     }
+    
     
 }
