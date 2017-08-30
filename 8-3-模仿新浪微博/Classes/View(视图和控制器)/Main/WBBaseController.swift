@@ -59,6 +59,8 @@ class WBBaseController: UIViewController{
 extension WBBaseController {
     @objc fileprivate func login() {
         print("用户登录界面")
+        // 发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     @objc fileprivate func register() {
         print("用户注册界面")
@@ -81,6 +83,7 @@ extension WBBaseController {
 
        setupNavigationBar()
         userLogon ? setupTableView() : setupVisitorView()
+        //WBNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
     }
     
     // 设置导航条

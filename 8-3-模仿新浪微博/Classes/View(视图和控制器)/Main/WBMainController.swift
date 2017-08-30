@@ -10,12 +10,41 @@ import UIKit
 
 class WBMainController: UITabBarController {
 
+    // 定时器
+    fileprivate var timer: Timer?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupChildControllers()
         setupComposeButton()
+        setupTimer()
+        
+       // 设置代理
+        delegate = self as? UITabBarControllerDelegate
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
+    
     }
+    deinit {
+        // 销毁定时器
+        timer?.invalidate()
+    }
+    
+    // MARK ---- 用户登录通知的监听方法 ---
+    @objc fileprivate func userLogin(){
+        
+        print("用户通知")
+        // 展现登录控制器, 通常会和UINavigationController连用，方便返回
+        let vc = UINavigationController(rootViewController: WBOAuthViewController())
+        
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
     
     /*
      - viewController中实现的方法
@@ -143,7 +172,72 @@ extension WBMainController {
 }
 
 
+extension WBMainController {
+    // 定义时钟
+    fileprivate func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+       }
+    
+    // 时钟触发方法
+    @objc fileprivate func updateTimer(){
+        
+        // 如果没有登录则不用去触发时钟的方法
+        if !WBNetworkManager.shared.userLogon {
+            return
+        }
+        
+        WBNetworkManager.shared.unreadCount { (count) in
+        
+             // 设置首页tabBarItem的badgeNumber
+        self.tabBar.items?[0].badgeValue =   count > 0 ? "\(count)" : ""
+        //self.tabBar.items?[0].badgeValue =   "9"
 
+        
+             // 设置app外层的badgeNumber,从ios8.0之后需要用户授权才能使用
+        UIApplication.shared.applicationIconBadgeNumber = count
+        }
+    }
+
+
+}
+
+// 遵守代理
+extension WBMainController: UITabBarControllerDelegate {
+    
+    /// 将要选择tabBarItem
+    ///
+    /// - Parameters:
+    ///   - tabBarController: tabBarController
+    ///   - viewController: viewController 目标控制器
+    /// - Returns: 是否切换到目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("将要切换到\(viewController)")
+        
+        // 1.获取控制器在数组中的索引
+        let idx = childViewControllers.index(of: viewController)
+        // 2.判断当前索引是否是首页，同时idx也是首页（即在首页又点击首页的按钮）
+        if selectedIndex == 0 && idx == selectedIndex {
+            print("点击首页")
+            // 3. 让表格滚动到顶部
+            // a. 获取到控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! WBHomeViewController
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y:-64), animated: true)
+            // 4 刷新表格
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                vc.loadData()
+            })
+            
+        }
+        
+        
+        // 判断目标控制器是uiviewcontroller
+        // 增加延迟，保证表格县滚动到顶部然后再进行刷新
+        return !viewController.isMember(of: UIViewController.self) //避免点击到容错点
+    }
+    
+}
 
 
 
