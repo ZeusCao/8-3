@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBWelcomView" customModule="模仿新浪微博" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="Vog-cF-ylB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-NM-Maz">
+                    <rect key="frame" x="117.5" y="323" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="b6B-YA-LLz"/>
+                        <constraint firstAttribute="width" constant="85" id="iJH-CR-ojk"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c4-Zc-mEU">
+                    <rect key="frame" x="125" y="416" width="69.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Vog-cF-ylB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D7A-zS-S6t"/>
+                <constraint firstAttribute="bottom" secondItem="NNG-NM-Maz" secondAttribute="bottom" constant="160" id="Sfg-LB-CDr"/>
+                <constraint firstAttribute="bottom" secondItem="Vog-cF-ylB" secondAttribute="bottom" id="UMU-wW-E8G"/>
+                <constraint firstItem="Vog-cF-ylB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VQl-q2-HQ8"/>
+                <constraint firstItem="3c4-Zc-mEU" firstAttribute="centerX" secondItem="NNG-NM-Maz" secondAttribute="centerX" id="Xtv-EF-aML"/>
+                <constraint firstItem="3c4-Zc-mEU" firstAttribute="top" secondItem="NNG-NM-Maz" secondAttribute="bottom" constant="8" id="hfy-RX-n2I"/>
+                <constraint firstAttribute="trailing" secondItem="Vog-cF-ylB" secondAttribute="trailing" id="mkG-e7-QYm"/>
+                <constraint firstItem="NNG-NM-Maz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uOt-WR-dUL"/>
+            </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="Sfg-LB-CDr" id="5cv-Lj-Gkn"/>
+                <outlet property="iconView" destination="NNG-NM-Maz" id="86P-De-nAK"/>
+                <outlet property="tipLabel" destination="3c4-Zc-mEU" id="s9H-Y6-P0N"/>
+            </connections>
+            <point key="canvasLocation" x="-135.5" y="-46.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default" width="50" height="50"/>
+    </resources>
+</document>

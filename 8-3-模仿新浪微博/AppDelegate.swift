@@ -8,6 +8,9 @@
 
 import UIKit
 import UserNotifications
+import SVProgressHUD
+import AFNetworking
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setupAdditons()
         
         // 申请用户授权，收取通知，包括上方的提示条，声音，badgeNumber
         // #available检测设备版本 10.0
@@ -61,7 +66,15 @@ extension AppDelegate {
 }
 
 
-
+// MARK --- 设置应用程序额外信息
+extension AppDelegate {
+    fileprivate func setupAdditons() {
+        // 1，设置SVprogressHUD最小解除时间
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        // 2.设置网络加载指示器
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+    }
+}
 
 
 

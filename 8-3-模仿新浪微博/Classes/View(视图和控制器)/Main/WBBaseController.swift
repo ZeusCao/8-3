@@ -10,12 +10,11 @@ import UIKit
 
 // 在swift中利用extension可以把函数按照功能分类管理，便于阅读和维护，注意： 1.extension中不能有属性， 2.extension中不能重写父类本类的方法【不包括扩展方法】（重写子类方法是子类的职责，扩展是对类的扩展）
 
-
 // 所有主控制器的基类控制器
 class WBBaseController: UIViewController{
     
     // 用户登录状态
-    var userLogon = false
+    //var userLogon = false
     
     // 访客视图信息字典
     var visitorInfo: [String : String]?
@@ -37,7 +36,16 @@ class WBBaseController: UIViewController{
         super.viewDidLoad()
         
         setupUI()
-        loadData()
+        WBNetworkManager.shared.userLogon ? loadData() : ()
+    
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: WBUserLoginSuccessNotification), object: nil)
+    }
+
+    
+    deinit {
+        // 注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     // 重写title的set方法
@@ -51,12 +59,31 @@ class WBBaseController: UIViewController{
     func loadData() {
         // 如果子类不实现该方法，则默认关闭刷新控件
         refreshControl?.endRefreshing()
+        
     }
     
 }
 
 // MARK--- 访客视图监听方法 ---
 extension WBBaseController {
+    
+    // 登录成功通知监听方法
+    @objc fileprivate func loginSuccess(n: Notification) {
+    
+        print("登陆成功")
+        // 更新UI 将访客视图替换为表格视图 （需要重新执行setupUI,重新设置view）
+        // 在访问view的get方法时，如果view = nil 会调用loadView方法，再调用viewDidload
+        view = nil
+        
+        // 此时调用viewdidload方法通知会在此注册，需要注销
+        NotificationCenter.default.removeObserver(self)
+        
+        // 清除右上角的登录按钮
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+      
+    }
+    
     @objc fileprivate func login() {
         print("用户登录界面")
         // 发送通知
@@ -82,8 +109,8 @@ extension WBBaseController {
         automaticallyAdjustsScrollViewInsets = false
 
        setupNavigationBar()
-        userLogon ? setupTableView() : setupVisitorView()
-        //WBNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
+        //userLogon ? setupTableView() : setupVisitorView()
+        WBNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
     }
     
     // 设置导航条
@@ -113,6 +140,9 @@ extension WBBaseController {
         // 设置数据源和代理，目的让子类直接实现数据源方法
         tableView?.delegate = self
         tableView?.dataSource = self
+        
+        // 修改竖直滚动条的缩进(指示器缩进)
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         // 设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 0, right: 0)
@@ -189,7 +219,6 @@ extension WBBaseController:UITableViewDelegate,UITableViewDataSource {
             
           }
     }
-    
 }
 
 

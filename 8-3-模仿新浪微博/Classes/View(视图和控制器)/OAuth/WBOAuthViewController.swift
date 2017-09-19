@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 // 通过webview加载新浪微博授权界面控制器
 class WBOAuthViewController: UIViewController {
@@ -16,6 +17,8 @@ class WBOAuthViewController: UIViewController {
     override func loadView() {
         view = webview
         view.backgroundColor = UIColor.white
+        
+        webview.scrollView.isScrollEnabled = false  // 取消webview的滚动
         
         webview.delegate = self
         // 设置导航栏
@@ -28,7 +31,7 @@ class WBOAuthViewController: UIViewController {
         super.viewDidLoad()
 
        // 加载授权界面
-        let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppKey)&redirect_url=\(WBRedirectURI)"
+        let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppKey)&redirect_uri=\(WBRedirectURI)"
         // 1. 确定要访问的资源
         guard let url = URL(string: urlString)else {
             return
@@ -37,6 +40,7 @@ class WBOAuthViewController: UIViewController {
         let request = URLRequest(url: url)
         // 3. 加载请求
         webview.loadRequest(request)
+        
         
     }
 
@@ -49,7 +53,7 @@ class WBOAuthViewController: UIViewController {
     // 自动填充，webview的注入（直接通过js修改本地浏览器中缓存的页面内容）
     @objc fileprivate func autoFill() {
         // 准备js
-        let js = "xxxxxxxxx"
+        let js = "document.getElementById('userId').value = '15249287359';" + "document.getElementById('passwd').value = '13892583395';"
         // 让webView直行js
         webview.stringByEvaluatingJavaScript(from: js)
     }
@@ -91,8 +95,34 @@ extension WBOAuthViewController: UIWebViewDelegate {
          let code = request.url?.query?.substring(from: "code=".endIndex)
         print("获取授权码\(code)")
         
+         // 4. 使用授权码获取accessToken
+        WBNetworkManager.shared.loadAccessToken(code: code!) { (isSuccess) in
+            if !isSuccess {
+                SVProgressHUD.showInfo(withStatus: "网络请求失败")
+            }
+            else
+            {
+                
+                // 跳转界面
+                 // 1> 发送通知
+                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserLoginSuccessNotification), object: nil)
+                 // 2> 关闭窗口（监听方法）
+                self.close()
+            }
+        }
         return false //(不用将百度页面取出来)
     }
+    
+    
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
 }
 
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class WBMainController: UITabBarController {
 
     // 定时器
@@ -17,9 +17,15 @@ class WBMainController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 设置新特性视图
+        setupNewFeatureViews()
+        
         setupChildControllers()
         setupComposeButton()
         setupTimer()
+        
+        
+        
         
        // 设置代理
         delegate = self as? UITabBarControllerDelegate
@@ -34,13 +40,30 @@ class WBMainController: UITabBarController {
     }
     
     // MARK ---- 用户登录通知的监听方法 ---
-    @objc fileprivate func userLogin(){
+    @objc fileprivate func userLogin(n: Notification){
         
         print("用户通知")
-        // 展现登录控制器, 通常会和UINavigationController连用，方便返回
-        let vc = UINavigationController(rootViewController: WBOAuthViewController())
+        var deadline = DispatchTime.now()
+        // 判断notification.object是否有值，如果有值提示用户重新登录
+        if n.object != nil {
+            // 修改指示器的渐变样式
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "用户登录已经超时，需要重新登录")
+            deadline = DispatchTime.now() + 2
+        }
         
-        present(vc, animated: true, completion: nil)
+        //为了不让弹框一闪而过看不到,延迟执行
+        
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            // 恢复设置
+            SVProgressHUD.setDefaultMaskType(.clear)
+            
+            // 展现登录控制器, 通常会和UINavigationController连用，方便返回
+            let vc = UINavigationController(rootViewController: WBOAuthViewController())
+            
+            self.present(vc, animated: true, completion: nil)
+
+        }
         
     }
     
@@ -229,6 +252,10 @@ extension WBMainController: UITabBarControllerDelegate {
                 vc.loadData()
             })
             
+            // 5 清除tabItem的角标
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            
         }
         
         
@@ -238,6 +265,57 @@ extension WBMainController: UITabBarControllerDelegate {
     }
     
 }
+
+
+// MARK ---设置视图新特性
+extension WBMainController {
+    fileprivate func setupNewFeatureViews() {
+        
+        // 0. 判断是否登录
+        if !WBNetworkManager.shared.userLogon {
+            return
+        }
+        
+        // 1. 检查版本是否更新
+        
+        // 2.如果更新显示新特性，否则显示欢迎
+        let v = isNewVersion ? WBNewFeatureView.newFeatureView() : WBWelcomView.welcomeView()
+         //let v = WBNewFeatureView.newFeatureView()
+        // 3添加视图
+        v.frame = view.bounds
+        view.addSubview(v)
+    }
+    
+    // 计算型属性，构造函数，给属性分配空间
+    fileprivate var isNewVersion: Bool{
+        
+        // 1. 取当前的版本号
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        
+        // 2. 取保存在document目录下之前的版本号
+        let path: String = ("version" as NSString).cz_appendDocumentDir()
+        let sandBoxVersion = (try? String(contentsOfFile: path)) ?? ""
+        // 3. 将版本号保存在沙盒中
+        try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+        // 4. 返回两个版本号的比较结果是否一致
+        return currentVersion != sandBoxVersion
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

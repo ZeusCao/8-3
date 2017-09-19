@@ -1,5 +1,4 @@
-//
-//  WBStatus.swift
+////  WBStatus.swift
 //  8-3-模仿新浪微博
 //
 //  Created by Zeus on 2017/8/25.
@@ -18,8 +17,41 @@ class WBStatus: NSObject {
     // 微博信息内容
     var text: String?
     
+    // 转发数
+    var reposts_count: Int = 0
+    // 评论数
+    var comments_count: Int = 0
+    // 点赞数
+    var attitudes_count: Int = 0
+    
+    // 微博的用户
+    var user: WBUser?
+    
+    // 微博配图模型数组
+    var pic_urls: [WBStatusPicture]?
+    
+    
     // 开发模型需要重写description的计算型属性(为了打印出的是具体的属性而不是对象的地址)
     override var description: String{
         return yy_modelDescription()
     }
+    
+    // 类函数： 告诉第三方YYmodel， 如果遇到数组类型的属性，数组中存放的对象是什么类，做一个映射
+    class func modelContainerPropertyGenericClass() -> [String: AnyClass] {
+        return ["pic_urls" : WBStatusPicture.self]
+    }
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
